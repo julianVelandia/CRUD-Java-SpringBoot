@@ -2,6 +2,8 @@ package com.example.CRUD.dao;
 
 import com.example.CRUD.model.Person;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface PersonDao {
@@ -13,4 +15,9 @@ public interface PersonDao {
         return insertPerson(id,person);
     }
 
+    List<Person> SelectAllPeople();
+
+    Optional<Person> selectPersonById(UUID id);
+    int deletePersonById(UUID id);
+    int updatePersonById(UUID id, Person person);
 }
